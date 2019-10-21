@@ -1,0 +1,22 @@
+- set up travis CI
+- plan app front end architecture
+- plan redux architecture
+- plan storage architecture
+- start App functionalities
+   - build components/ error 404 pages
+   - implemenet firebase
+   - use localstorage for caching
+   - use proptypes
+   - use react routers
+   - use error boundaries
+   - use lazy loading
+   - use Hoc
+   - use as many functional components as posssible
+   - styles
+    - use material UI
+    - use css spinners
+   - implemenet redux
+   - test your apps
+   - update readme
+   - use heroku for final deployment
+- integrate email service
