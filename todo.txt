@@ -20,3 +20,4 @@
    - update readme
    - use heroku for final deployment
 - integrate email service
+- follow https://github.com/FunbiOyede/deploy-react-kubernetes architecture
