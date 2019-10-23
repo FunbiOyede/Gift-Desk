@@ -6,6 +6,7 @@
    - build components/ error 404 pages
    - implemenet firebase
    - use localstorage for caching
+   - use  pouchDB
    - use proptypes
    - use react routers
    - use error boundaries
@@ -21,3 +22,7 @@
    - use heroku for final deployment
 - integrate email service
 - follow https://github.com/FunbiOyede/deploy-react-kubernetes architecture
+
+
+--problems
+- fix links on dashboard
