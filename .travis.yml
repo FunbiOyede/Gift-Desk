@@ -1,11 +1,9 @@
 laguage: node_js
 
-version: 12.13.0
+node_js: 12.13.0
 
 cache: yarn
 
 install: yarn install
 
-script:
-  - yarn test
-  - yarn run build
+script: yarn test
