@@ -7,6 +7,8 @@ import Wishlists from "./containers/wishlists/Wishlists";
 import Setting from "./containers/setting/Setting";
 import ShoppingLists from "./containers/shoppingLists/ShoppingLists";
 import ideas from "./containers/ideas/ideas";
+import create from "./containers/wishlists/createLists";
+import Error from "./components/Error/Error";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/settings" exact component={Setting} />
           <Route path="/lists" exact component={ShoppingLists} />
           <Route path="/ideas" exact component={ideas} />
+          <Route path="/create" exact component={create} />
+          <Route component={Error} />
         </Switch>
       </BrowserRouter>
     </div>

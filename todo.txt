@@ -16,7 +16,7 @@
    - styles
     - use material UI
     - use css spinners
-   - implemenet redux
+   - implemenet redux for user and time of the day
    - test your apps
    - update readme
    - use heroku for final deployment
