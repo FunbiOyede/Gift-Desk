@@ -12,6 +12,8 @@ import Navigation from "../../components/Navigation/Navigation";
 import { dbName, dbUrl } from "../../DB/db";
 import PouchDB from "pouchdb";
 
+export let localDB = new PouchDB(dbName);
+// let remoteDB = new PouchDB(dbUrl);
 /**
  * Syncs  localDB with remoteDB
  * @param{dbName} localDB
@@ -65,7 +67,7 @@ class createLists extends Component {
   };
   saveDetails = e => {
     e.preventDefault();
-    dbName
+    localDB
       .put({
         _id: new Date().toJSON(),
         name: this.state.name,
