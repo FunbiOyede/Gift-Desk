@@ -1,5 +1,6 @@
 let initialState = {
-  name: "funbi"
+  name: "funbi",
+  date: new Date().toDateString()
 };
 
 const username = (state = initialState, action) => state;

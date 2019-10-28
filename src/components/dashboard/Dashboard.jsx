@@ -16,6 +16,7 @@ const Dashboard = props => (
     <Navigation />
     <header>
       <h3 className={styles.Heading}>Dashboard</h3>
+      <h3>{props.Date}</h3>
       <h4>Hi {props.Username} what do you want to do</h4>
     </header>
 
@@ -69,7 +70,8 @@ const paper = {
 
 const mapStateToProps = state => {
   return {
-    Username: state.name
+    Username: state.name,
+    Date: state.date
   };
 };
 export default connect(mapStateToProps)(Dashboard);

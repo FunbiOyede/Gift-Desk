@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import Navigation from "../../components/Navigation/Navigation";
 class Wishlists extends Component {
   RedirectToCreateWishLists = () => {
     this.props.history.push("/create");
@@ -7,7 +8,9 @@ class Wishlists extends Component {
   render() {
     return (
       <div>
-        Wish lists
+        <Navigation />
+
+        <h3>Wish lists</h3>
         <p>You have {this.props.child} upcoming wish lists</p>
         <div>
           <button onClick={this.RedirectToCreateWishLists}>

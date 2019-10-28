@@ -19,7 +19,7 @@
    - implemenet redux for user and time of the day
    - test your apps
    - update readme
-   - use heroku for final deployment
+   - use firebase for final deployment
 - integrate email service
 - follow https://github.com/FunbiOyede/deploy-react-kubernetes architecture
 
