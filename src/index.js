@@ -3,11 +3,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import configStore from "./store/config.store";
-
+// import configStore from "./store/config.store";
+import { createStore } from "redux";
+import username from "./reducers/username";
 import { Provider } from "react-redux";
 
-const store = configStore;
+const store = createStore(username);
 ReactDOM.render(
   <Provider store={store}>
     <App />

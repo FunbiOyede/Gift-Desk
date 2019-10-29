@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import Navigation from "../../components/Navigation/Navigation";
 import { localDB } from "./createLists";
-import { connectableObservableDescriptor } from "rxjs/internal/observable/ConnectableObservable";
+
 class Wishlists extends Component {
   state = {
     user: {}

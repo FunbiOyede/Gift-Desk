@@ -26,3 +26,7 @@
 
 --problems
 - fix links on dashboard
+-- delete all data in pouch and sync when the apps is mounted 
+-- how do we implemenet wishlist
+-- give unique id
+--- builds are failing
