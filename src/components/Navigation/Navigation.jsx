@@ -7,7 +7,7 @@ import React from "react";
 
 const Navigation = props => (
   <div>
-    <AppBar position="static">
+    <AppBar position="static" style={{ background: "#4c8068c7" }}>
       <Toolbar>
         <Typography variant="h6">Vivid Gift</Typography>
         <Link to="/logout">Logout</Link>
