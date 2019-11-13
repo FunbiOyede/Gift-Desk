@@ -1,12 +1,12 @@
 - set up travis CI
+- its full stack
 - plan app front end architecture
 - plan redux architecture
 - plan storage architecture
 - start App functionalities
    - build components/ error 404 pages
    - implemenet firebase
-   - use localstorage for caching
-   - use  pouchDB
+   
    - use proptypes
    - use react routers
    - use error boundaries
@@ -26,7 +26,5 @@
 
 --problems
 - fix links on dashboard
--- delete all data in pouch and sync when the apps is mounted 
--- how do we implemenet wishlist
--- give unique id
+
 --- builds are failing
