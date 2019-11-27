@@ -1,5 +1,7 @@
 .DashboardList {
   transition: all 0.5s ease-in-out;
+  text-decoration: none;
+  color: #0e0d0d;
 }
 
 .DashboardList:hover {
@@ -11,17 +13,9 @@
   font-weight: 600;
   font-size: 2.25rem;
 }
-.Links {
-  text-decoration: none;
-  color: #0e0d0d;
-  /* width: 30%;
-  height: 200px;
-  padding: 1.25rem 2.5rem 1.25rem 1.5rem;
-  margin: 10px 20px;
-  background-color: whitesmoke; */
-}
 
 .icons {
   position: relative;
   top: 2px;
+  color: rgba(28, 68, 48, 0.78);
 }

@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import {
-  MuiPickersUtilsProvider,
-  KeyboardDatePicker
-} from "@material-ui/pickers";
-import Grid from "@material-ui/core/Grid";
-import DateFnsUtils from "@date-io/date-fns";
+
 import SaveIcon from "@material-ui/icons/Save";
 import Navigation from "../../components/Navigation/Navigation";
 
@@ -113,22 +108,6 @@ class createLists extends Component {
               variant="outlined"
               onChange={this.getProducPrice}
             />
-
-            <MuiPickersUtilsProvider utils={DateFnsUtils}>
-              <Grid container justify="space-around">
-                <KeyboardDatePicker
-                  disableToolbar
-                  variant="inline"
-                  format="MM/dd/yyyy"
-                  margin="normal"
-                  id="date-picker-inline"
-                  label="Date picker inline"
-                  KeyboardButtonProps={{
-                    "aria-label": "change date"
-                  }}
-                />
-              </Grid>
-            </MuiPickersUtilsProvider>
 
             <Button
               variant="contained"

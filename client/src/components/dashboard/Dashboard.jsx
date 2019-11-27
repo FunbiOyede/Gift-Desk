@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-
 import Typography from "@material-ui/core/Typography";
-import Paper from "@material-ui/core/Paper";
 import CakeIcon from "@material-ui/icons/Cake";
 import SettingsIcon from "@material-ui/icons/Settings";
 import FormatListNumberedIcon from "@material-ui/icons/FormatListNumbered";
@@ -21,41 +19,36 @@ const Dashboard = props => (
     </header>
 
     <div style={{ display: "flex" }}>
-      <Paper className={styles.DashboardList} style={paper}>
+      <Link className={styles.DashboardList} style={paper} to="/create">
         <Typography variant="h5" component="h3">
-          <Link className={styles.Links} to="/create">
-            <CakeIcon className={styles.icons} /> Create Wishlists
-            <p>Create a wish list for anything you want.</p>
-          </Link>
+          <CakeIcon className={styles.icons} /> Create Wishlists
+          <p>Create a wish list for anything you want.</p>
         </Typography>
-      </Paper>
-      <Paper className={styles.DashboardList} style={paper}>
-        <Typography variant="h5" component="h3">
-          <Link className={styles.Links} to="/settings">
-            <SettingsIcon className={styles.icons} />
-            Settings
-            <p>Update your details </p>
-          </Link>
-        </Typography>
-      </Paper>
-      <Paper className={styles.DashboardList} style={paper}>
-        <Typography variant="h5" component="h3">
-          <Link className={styles.Links} to="/lists">
-            <FormatListNumberedIcon className={styles.icons} />
-            Shopping Lists
-            <p>The items you've reserved on friends you love</p>
-          </Link>
-        </Typography>
-      </Paper>
+      </Link>
 
-      <Paper className={styles.DashboardList} style={paper}>
+      <Link className={styles.DashboardList} style={paper} to="/settings">
         <Typography variant="h5" component="h3">
-          <Link className={styles.Links} to="/ideas">
-            <MoodIcon className={styles.icons} />
-            Ideas
-          </Link>
+          <SettingsIcon className={styles.icons} />
+          Settings
+          <p>Update your details </p>
         </Typography>
-      </Paper>
+      </Link>
+
+      <Link className={styles.DashboardList} style={paper} to="/lists">
+        <Typography variant="h5" component="h3">
+          <FormatListNumberedIcon className={styles.icons} />
+          Shopping Lists
+          <p>The items you've reserved on friends you love</p>
+        </Typography>
+      </Link>
+
+      <Link className={styles.DashboardList} style={paper} to="/ideas">
+        <MoodIcon className={styles.icons} />
+        <Typography variant="h5" component="h3">
+          <FormatListNumberedIcon className={styles.icons} />
+          Ideas
+        </Typography>
+      </Link>
     </div>
   </div>
 );
