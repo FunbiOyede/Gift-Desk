@@ -1,7 +1,9 @@
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 class ideasTwo extends Component {
   state = {};
   render() {
-    return <div>{/* for your friendd */}</div>;
+    return <Redirect to="/create" />;
   }
 }
 

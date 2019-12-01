@@ -111,7 +111,7 @@ class createLists extends Component {
 
             <Button
               variant="contained"
-              color="primary"
+              style={{ background: "rgba(76, 128, 104, 0.78)", color: "white" }}
               size="large"
               startIcon={<SaveIcon />}
               onClick={this.saveDetails}

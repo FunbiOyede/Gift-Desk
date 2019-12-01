@@ -7,11 +7,37 @@ import React from "react";
 
 const Navigation = props => (
   <div>
-    <AppBar position="static" style={{ background: "#4c8068c7" }}>
-      <Toolbar>
-        <Typography variant="h6">Vivid Gift</Typography>
-        <Link to="/logout">Logout</Link>
-        <Link to="/wishlists">wishlists</Link>
+    <AppBar
+      position="static"
+      style={{ background: "#4c8068c7", width: "100%" }}
+    >
+      <Toolbar
+        style={{
+          display: "flex",
+          justifyContent: "space-around"
+        }}
+      >
+        <Link
+          to="/dashboard"
+          style={{ textDecoration: "none", color: "white" }}
+        >
+          <Typography variant="h6">Vivid Gift</Typography>
+        </Link>
+
+        <div>
+          <Link
+            to="/logout"
+            style={{ padding: "20px", textDecoration: "none", color: "white" }}
+          >
+            Logout
+          </Link>
+          <Link
+            to="/wishlists"
+            style={{ padding: "20px", textDecoration: "none", color: "white" }}
+          >
+            wishlists
+          </Link>
+        </div>
       </Toolbar>
     </AppBar>
   </div>

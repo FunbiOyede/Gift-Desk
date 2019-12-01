@@ -15,7 +15,7 @@ const Dashboard = props => (
     <header>
       <h3 className={styles.Heading}>Dashboard</h3>
       <h3>{props.Date}</h3>
-      <h4>Hi {props.Username} what do you want to do</h4>
+      <h4>Hi {props.Username} what do you want to do today </h4>
     </header>
 
     <div style={{ display: "flex" }}>
@@ -42,7 +42,7 @@ const Dashboard = props => (
         </Typography>
       </Link>
 
-      <Link className={styles.DashboardList} style={paper} to="/ideas">
+      <Link className={styles.DashboardList} style={paper} to="/idea">
         <MoodIcon className={styles.icons} />
         <Typography variant="h5" component="h3">
           <FormatListNumberedIcon className={styles.icons} />

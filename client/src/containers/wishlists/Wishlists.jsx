@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import Navigation from "../../components/Navigation/Navigation";
-
+import axios from "axios";
 class Wishlists extends Component {
   state = {
     user: {}
@@ -10,7 +10,17 @@ class Wishlists extends Component {
     this.props.history.push("/create");
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    axios
+      .get("http://localhost:5000/")
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
   render() {
     return (
       <div>
