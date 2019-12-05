@@ -10,12 +10,12 @@ class Idea extends Component {
       <div>
         <Navigation />
         <div>
-          <Link to="/ideasCreate">New Idea</Link>
+          <Link to="/CreateIdeas">New Idea</Link>
 
           {/* based of if the ideas column is empty */}
           <p>You dont have any ideas yet</p>
           <h3>Create one</h3>
-          <Link to="/ideasCreate">Create idea</Link>
+          <Link to="/CreateIdeas">Create idea</Link>
         </div>
       </div>
     );

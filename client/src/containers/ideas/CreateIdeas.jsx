@@ -17,7 +17,7 @@ class IdeasCreate extends Component {
           <Link to="/ideas" className={styles.links}>
             Yes, for me
           </Link>
-          <Link to="/ideasTwo" className={styles.links}>
+          <Link to="/NonUsersIdeas" className={styles.links}>
             No, for someone else
           </Link>
         </div>

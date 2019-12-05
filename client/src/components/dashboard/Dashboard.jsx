@@ -8,56 +8,58 @@ import Navigation from "../Navigation/Navigation";
 const Dashboard = props => (
   <div>
     <Navigation />
-    <header>
-      <Typography variant="h6" component="h2">
-        <h3 className={styles.Heading}>Dashboard</h3>
-      </Typography>
-
-      {/* <h3>{props.Date}</h3> */}
-
-      <h4>Hi {props.Username} what do you want to do today? </h4>
-    </header>
-
-    <div style={{ display: "flex" }}>
-      <Link className={styles.DashboardList} style={paper} to="/create">
+    <div>
+      <header>
         <Typography variant="h6" component="h2">
-          <span role="img" aria-label="image">
-            🎁
-          </span>{" "}
-          Create Wishlists
-          <p>Create a wish list for anything you want.</p>
+          <h3 className={styles.Heading}>Dashboard</h3>
         </Typography>
-      </Link>
 
-      <Link className={styles.DashboardList} style={paper} to="/settings">
-        <Typography variant="h6" component="h2">
-          <span role="img" aria-label="image">
-            ⚙️
-          </span>
-          Settings
-          <p>Update your details </p>
-        </Typography>
-      </Link>
+        {/* <h3>{props.Date}</h3> */}
 
-      <Link className={styles.DashboardList} style={paper} to="/lists">
-        <Typography variant="h6" component="h2">
-          <span role="img" aria-label="image">
-            🛒
-          </span>
-          Shopping Lists
-          <p>The items you've reserved on friends you love</p>
-        </Typography>
-      </Link>
+        <h4>Hi {props.Username} what do you want to do today? </h4>
+      </header>
 
-      <Link className={styles.DashboardList} style={paper} to="/idea">
-        <Typography variant="h6" component="h2">
-          <span role="img" aria-label="image">
-            💡
-          </span>
-          Ideas
-          <p>A private place just for you,for yourself and your friends. </p>
-        </Typography>
-      </Link>
+      <div style={{ display: "flex" }}>
+        <Link className={styles.DashboardList} style={paper} to="/create">
+          <Typography variant="h6" component="h2">
+            <span role="img" aria-label="image">
+              🎁
+            </span>{" "}
+            Create Wishlists
+            <p>Create a wish list for anything you want.</p>
+          </Typography>
+        </Link>
+
+        <Link className={styles.DashboardList} style={paper} to="/settings">
+          <Typography variant="h6" component="h2">
+            <span role="img" aria-label="image">
+              ⚙️
+            </span>
+            Settings
+            <p>Update your details </p>
+          </Typography>
+        </Link>
+
+        <Link className={styles.DashboardList} style={paper} to="/lists">
+          <Typography variant="h6" component="h2">
+            <span role="img" aria-label="image">
+              🛒
+            </span>
+            Shopping Lists
+            <p>The items you've reserved on friends you love</p>
+          </Typography>
+        </Link>
+
+        <Link className={styles.DashboardList} style={paper} to="/idea">
+          <Typography variant="h6" component="h2">
+            <span role="img" aria-label="image">
+              💡
+            </span>
+            Ideas
+            <p>A private place just for you,for yourself and your friends. </p>
+          </Typography>
+        </Link>
+      </div>
     </div>
   </div>
 );
