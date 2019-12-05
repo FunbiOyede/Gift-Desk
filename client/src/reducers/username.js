@@ -1,5 +1,5 @@
 let initialState = {
-  name: "funbi",
+  name: "Funbi",
   date: new Date().toDateString()
 };
 

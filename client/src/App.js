@@ -8,11 +8,11 @@ import ShoppingLists from "./containers/shoppingLists/ShoppingLists";
 import Idea from "./containers/ideas/Idea";
 import create from "./containers/wishlists/createLists";
 import Dashboard from "./components/dashboard/Dashboard";
-import Error from "./components/Error/Error";
 import IdeasCreate from "../src/containers/ideas/IdeasCreate";
-import Ideas from "../src/containers/ideas/ideas";
+import Ideas from "./containers/ideas/Ideas";
 import IdeasTwo from "../src/containers/ideas/ideasTwo";
 import CreateLists from "../src/containers/wishlists/createLists";
+const Error = React.lazy(() => import("./components/Error/Error"));
 function App() {
   return (
     <div className="App">
@@ -29,7 +29,9 @@ function App() {
           <Route path="/ideasCreate" exact component={IdeasCreate} />
           <Route path="/ideasTwo" exact component={IdeasTwo} />
           <Route path="/create" exact component={CreateLists} />
-          <Route component={Error} />
+          <React.Suspense fallback={<p>loading...</p>}>
+            <Route component={Error} />
+          </React.Suspense>
         </Switch>
       </BrowserRouter>
     </div>

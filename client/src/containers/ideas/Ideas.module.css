@@ -1,0 +1,10 @@
+.links {
+  text-decoration: none;
+  color: black;
+  padding: 20px;
+  letter-spacing: 0.1rem;
+}
+
+.links:hover {
+  color: rgba(76, 128, 104, 0.78);
+}

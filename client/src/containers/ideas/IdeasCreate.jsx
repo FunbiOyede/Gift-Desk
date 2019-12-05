@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "../../components/Navigation/Navigation";
+import styles from "./Ideas.module.css";
 class IdeasCreate extends Component {
   constructor(props) {
     super(props);
@@ -13,8 +14,12 @@ class IdeasCreate extends Component {
         <div>
           <h2>yup ideas create</h2>
           <h4>Is this idea for you?</h4>
-          <Link to="/ideas">Yes, for me</Link>
-          <Link to="/ideasTwo">No, for someone else</Link>
+          <Link to="/ideas" className={styles.links}>
+            Yes, for me
+          </Link>
+          <Link to="/ideasTwo" className={styles.links}>
+            No, for someone else
+          </Link>
         </div>
       </div>
     );

@@ -2,10 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Typography from "@material-ui/core/Typography";
-import CakeIcon from "@material-ui/icons/Cake";
-import SettingsIcon from "@material-ui/icons/Settings";
-import FormatListNumberedIcon from "@material-ui/icons/FormatListNumbered";
-import MoodIcon from "@material-ui/icons/Mood";
 import styles from "./Dashboard.module.css";
 import Navigation from "../Navigation/Navigation";
 
@@ -13,40 +9,53 @@ const Dashboard = props => (
   <div>
     <Navigation />
     <header>
-      <h3 className={styles.Heading}>Dashboard</h3>
-      <h3>{props.Date}</h3>
-      <h4>Hi {props.Username} what do you want to do today </h4>
+      <Typography variant="h6" component="h2">
+        <h3 className={styles.Heading}>Dashboard</h3>
+      </Typography>
+
+      {/* <h3>{props.Date}</h3> */}
+
+      <h4>Hi {props.Username} what do you want to do today? </h4>
     </header>
 
     <div style={{ display: "flex" }}>
       <Link className={styles.DashboardList} style={paper} to="/create">
-        <Typography variant="h5" component="h3">
-          <CakeIcon className={styles.icons} /> Create Wishlists
+        <Typography variant="h6" component="h2">
+          <span role="img" aria-label="image">
+            🎁
+          </span>{" "}
+          Create Wishlists
           <p>Create a wish list for anything you want.</p>
         </Typography>
       </Link>
 
       <Link className={styles.DashboardList} style={paper} to="/settings">
-        <Typography variant="h5" component="h3">
-          <SettingsIcon className={styles.icons} />
+        <Typography variant="h6" component="h2">
+          <span role="img" aria-label="image">
+            ⚙️
+          </span>
           Settings
           <p>Update your details </p>
         </Typography>
       </Link>
 
       <Link className={styles.DashboardList} style={paper} to="/lists">
-        <Typography variant="h5" component="h3">
-          <FormatListNumberedIcon className={styles.icons} />
+        <Typography variant="h6" component="h2">
+          <span role="img" aria-label="image">
+            🛒
+          </span>
           Shopping Lists
           <p>The items you've reserved on friends you love</p>
         </Typography>
       </Link>
 
       <Link className={styles.DashboardList} style={paper} to="/idea">
-        <MoodIcon className={styles.icons} />
-        <Typography variant="h5" component="h3">
-          <FormatListNumberedIcon className={styles.icons} />
+        <Typography variant="h6" component="h2">
+          <span role="img" aria-label="image">
+            💡
+          </span>
           Ideas
+          <p>A private place just for you,for yourself and your friends. </p>
         </Typography>
       </Link>
     </div>

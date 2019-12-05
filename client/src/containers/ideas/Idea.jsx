@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "../../components/Navigation/Navigation";
+
 class Idea extends Component {
   state = {};
   render() {
@@ -9,7 +10,9 @@ class Idea extends Component {
       <div>
         <Navigation />
         <div>
-          <button>New Idea</button>
+          <Link to="/ideasCreate">New Idea</Link>
+
+          {/* based of if the ideas column is empty */}
           <p>You dont have any ideas yet</p>
           <h3>Create one</h3>
           <Link to="/ideasCreate">Create idea</Link>
