@@ -1,0 +1,14 @@
+.Register {
+  margin-bottom: 10px;
+}
+
+.link {
+  color: blue;
+  text-align: center;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration-line: underline;
+  color: rgb(46, 44, 44);
+}

@@ -5,6 +5,9 @@ import SaveIcon from "@material-ui/icons/Save";
 import Navigation from "../../components/Navigation/Navigation";
 import { get_wishlists } from "../../store/Actions/ActionCreators";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import Aide from "../../components/HOC/Aide";
+import styles from "./createLists.module.css";
 class createLists extends Component {
   state = {
     name: "",
@@ -64,7 +67,7 @@ class createLists extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <Aide>
         <Navigation />
         <h3>Create a new wish list</h3>
 
@@ -84,7 +87,6 @@ class createLists extends Component {
               variant="outlined"
               onChange={this.getTitle}
             />
-
             <TextField
               label="Description"
               multiline
@@ -93,6 +95,7 @@ class createLists extends Component {
               variant="outlined"
               onChange={this.getDescription}
             />
+
             <TextField
               placeholder="placetobuy.com.ng"
               label="url"
@@ -116,7 +119,6 @@ class createLists extends Component {
               variant="outlined"
               onChange={this.getProducPrice}
             />
-
             <Button
               variant="contained"
               style={{ background: "rgba(76, 128, 104, 0.78)", color: "white" }}
@@ -127,8 +129,13 @@ class createLists extends Component {
               Create Wishlists
             </Button>
           </form>
+          <div style={{ margin: "30px" }}>
+            <Link to="/wishlists" className={styles.links}>
+              cancel
+            </Link>
+          </div>
         </div>
-      </React.Fragment>
+      </Aide>
     );
   }
 }

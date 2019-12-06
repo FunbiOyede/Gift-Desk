@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import Typography from "@material-ui/core/Typography";
 import styles from "./Dashboard.module.css";
 import Navigation from "../Navigation/Navigation";
@@ -70,10 +70,10 @@ const paper = {
   backgroundColor: "whitesmoke"
 };
 
-const mapStateToProps = state => {
-  return {
-    Username: state.name,
-    Date: state.date
-  };
-};
-export default connect(mapStateToProps)(Dashboard);
+// const mapStateToProps = state => {
+//   return {
+//     Username: state.name,
+//     Date: state.date
+//   };
+// };
+export default Dashboard;

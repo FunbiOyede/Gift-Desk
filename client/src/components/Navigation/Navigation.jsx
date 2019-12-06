@@ -26,16 +26,23 @@ const Navigation = props => (
 
         <div>
           <Link
-            to="/signout"
+            to="/dashboard"
             style={{ padding: "20px", textDecoration: "none", color: "white" }}
           >
-            Logout
+            Dashboard
           </Link>
+
           <Link
             to="/wishlists"
             style={{ padding: "20px", textDecoration: "none", color: "white" }}
           >
             wishlists
+          </Link>
+          <Link
+            to="/signout"
+            style={{ padding: "20px", textDecoration: "none", color: "white" }}
+          >
+            Logout
           </Link>
         </div>
       </Toolbar>

@@ -1,28 +1,52 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
+import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
+import styles from "./Login.module.css";
+import HomeNav from "../Navigation/HomeNavigation";
+import Aide from "../HOC/Aide";
 class Login extends Component {
   render() {
     return (
-      <div>
-        <form>
-          <input type="email" />
-          <input type="password" />
-          <Button TypeOfForm="login" />
-        </form>
+      <Aide>
+        <HomeNav />
         <div>
-          <Link
-            style={{
-              color: "blue",
-              textAlign: "center",
-              textDecoration: "none"
-            }}
-            to="/register"
+          <Typography
+            variant="h6"
+            style={{ fontWeight: 700, color: "rgb(56, 64, 72)" }}
           >
-            Register
-          </Link>
+            Login
+          </Typography>
+
+          <form style={{ display: "grid", width: "40%", margin: "0 auto" }}>
+            <TextField
+              placeholder="Email"
+              label="Email"
+              margin="normal"
+              type="email"
+              variant="outlined"
+              className={styles.Login}
+            />
+            <TextField
+              placeholder="password"
+              label="password"
+              margin="normal"
+              type="password"
+              autoComplete="current-password"
+              variant="outlined"
+              className={styles.Login}
+            />
+
+            <Button TypeOfForm="login" />
+          </form>
+          <div>
+            <Link className={styles.link} to="/register">
+              Register
+            </Link>
+          </div>
         </div>
-      </div>
+      </Aide>
     );
   }
 }
