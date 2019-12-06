@@ -12,6 +12,9 @@ import CreateIdeas from "./containers/ideas/CreateIdeas";
 import Ideas from "./containers/ideas/Ideas";
 import NonUsersIdeas from "./containers/ideas/NonUsersIdeas";
 import CreateLists from "../src/containers/wishlists/createLists";
+import Signout from "./components/SignOut/Signout";
+const Register = React.lazy(() => import("./components/Register/Register"));
+const Login = React.lazy(() => import("./components/Login/Login"));
 const Home = React.lazy(() => import("../src/components/Home/Home"));
 const Error = React.lazy(() => import("./components/Error/Error"));
 function App() {
@@ -31,6 +34,9 @@ function App() {
             <Route path="/CreateIdeas" exact component={CreateIdeas} />
             <Route path="/NonUsersIdeas" exact component={NonUsersIdeas} />
             <Route path="/create" exact component={CreateLists} />
+            <Route path="/register" exact component={Register} />
+            <Route path="/login" exact component={Login} />
+            <Route path="/signout" exact component={Signout} />
             <Route component={Error} />
           </Switch>
         </React.Suspense>

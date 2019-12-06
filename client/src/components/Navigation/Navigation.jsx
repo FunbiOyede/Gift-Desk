@@ -26,7 +26,7 @@ const Navigation = props => (
 
         <div>
           <Link
-            to="/logout"
+            to="/signout"
             style={{ padding: "20px", textDecoration: "none", color: "white" }}
           >
             Logout

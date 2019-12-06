@@ -10,9 +10,7 @@ const Dashboard = props => (
     <Navigation />
     <div>
       <header>
-        <Typography variant="h6" component="h2">
-          <h3 className={styles.Heading}>Dashboard</h3>
-        </Typography>
+        <h4 className={styles.Heading}>Dashboard</h4>
 
         {/* <h3>{props.Date}</h3> */}
 

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-
 import SaveIcon from "@material-ui/icons/Save";
 import Navigation from "../../components/Navigation/Navigation";
-
+import { get_wishlists } from "../../store/Actions/ActionCreators";
+import { connect } from "react-redux";
 class createLists extends Component {
   state = {
     name: "",
@@ -52,6 +52,14 @@ class createLists extends Component {
   };
   saveDetails = e => {
     e.preventDefault();
+    this.props.handleWishlists(
+      this.state.name,
+      this.state.title,
+      this.state.Description,
+      this.state.url,
+      this.state.productName,
+      this.state.price
+    );
   };
 
   render() {
@@ -129,4 +137,12 @@ let form = {
   width: "40%",
   margin: "0 auto"
 };
-export default createLists;
+
+const mapDispatchToProps = dispatch => {
+  return {
+    handleWishlists: (name, title, description, url, productName, price) =>
+      dispatch(get_wishlists(name, title, description, url, productName, price))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(createLists);

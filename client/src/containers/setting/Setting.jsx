@@ -8,6 +8,7 @@ class Setting extends Component {
       <div>
         Your Settings
         <p>Update your details and profile photo</p>
+        <div>Coming Soon!!!</div>
       </div>
     );
   }
