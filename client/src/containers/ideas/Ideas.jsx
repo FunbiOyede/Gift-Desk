@@ -90,7 +90,7 @@ class Ideas extends Component {
 
             <Button
               variant="contained"
-              style={{ background: "rgba(76, 128, 104, 0.78)", color: "white" }}
+              style={{ background: "rgb(47, 108, 172)", color: "white" }}
               size="large"
               startIcon={<SaveIcon />}
               onClick={this.HandleUserIdeas}

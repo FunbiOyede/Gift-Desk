@@ -28,16 +28,6 @@ const Dashboard = props => (
           </Typography>
         </Link>
 
-        <Link className={styles.DashboardList} style={paper} to="/settings">
-          <Typography variant="h6" component="h2">
-            <span role="img" aria-label="image">
-              ⚙️
-            </span>
-            Settings
-            <p>Update your details </p>
-          </Typography>
-        </Link>
-
         <Link className={styles.DashboardList} style={paper} to="/lists">
           <Typography variant="h6" component="h2">
             <span role="img" aria-label="image">
@@ -55,6 +45,16 @@ const Dashboard = props => (
             </span>
             Ideas
             <p>A private place just for you,for yourself and your friends. </p>
+          </Typography>
+        </Link>
+
+        <Link className={styles.DashboardList} style={paper} to="/settings">
+          <Typography variant="h6" component="h2">
+            <span role="img" aria-label="image">
+              ⚙️
+            </span>
+            Settings
+            <p>Update your details </p>
           </Typography>
         </Link>
       </div>

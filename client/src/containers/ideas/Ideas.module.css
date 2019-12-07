@@ -9,3 +9,13 @@
   text-decoration-line: underline;
   color: black;
 }
+
+.cardsLink {
+  transition: all 0.8s ease-in-out;
+  text-decoration: none;
+}
+
+.cardsLink:hover {
+  box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease-in-out;
+}

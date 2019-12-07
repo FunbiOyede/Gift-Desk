@@ -9,7 +9,7 @@ const Navigation = props => (
   <div>
     <AppBar
       position="static"
-      style={{ background: "#4c8068c7", width: "100%" }}
+      style={{ background: "rgb(47, 108, 172)", width: "100%" }}
     >
       <Toolbar
         style={{
@@ -36,7 +36,7 @@ const Navigation = props => (
             to="/wishlists"
             style={{ padding: "20px", textDecoration: "none", color: "white" }}
           >
-            wishlists
+            Wishlists
           </Link>
           <Link
             to="/signout"
