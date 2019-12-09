@@ -1,10 +1,17 @@
 import * as ActionTypes from "../Actions/ActionTypes";
 const initialStateWishlists = {
   Wishlists: [],
-  error: false
+  error: false,
+  errorPost: false
 };
 
 export const Wishlists = (state = initialStateWishlists, action) => {
+  if (action.type === ActionTypes.POST_WISHLIST_FAILED) {
+    return {
+      ...state,
+      errorPost: true
+    };
+  }
   if (action.type === ActionTypes.FETCH_WISHLISTS_SUCCESS) {
     return {
       ...state,

@@ -41,7 +41,7 @@ const Wislists = sequelize.define("Wishlists", {
     }
   },
   Price: {
-    type: Sequelize.DECIMAL(8, 2),
+    type: Sequelize.DECIMAL(20, 2),
     allowNull: false,
     validate: {
       notEmpty: true

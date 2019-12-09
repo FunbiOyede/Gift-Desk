@@ -65,10 +65,11 @@ export const create_wishlists = (...wishlists) => {
     axios
       .post("http://localhost:5000/vivid/wishlists/create", wishlist)
       .then(response => {
-        console.log(response);
+        dispatch(post_wishlists_success(response));
       })
       .catch(error => {
         console.log(error);
+        dispatch(post_wishlists_failed(error));
       });
   };
 };
@@ -105,7 +106,6 @@ export const get_wishlists = () => {
         dispatch(fetch_wishlists_success(response.data));
       })
       .catch(error => {
-        console.log(error.toString());
         dispatch(fetch_wishlists_failure(error));
       });
   };

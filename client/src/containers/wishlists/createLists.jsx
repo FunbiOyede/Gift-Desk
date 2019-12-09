@@ -15,7 +15,8 @@ class createLists extends Component {
     Description: "",
     url: "",
     productName: "",
-    price: 0
+    price: 0,
+    errorMessage: ""
   };
 
   getName = e => {
@@ -64,7 +65,13 @@ class createLists extends Component {
       this.state.price
     );
 
-    this.props.history.push("/wishlists");
+    if (this.props.PostError) {
+      this.props.history.push("/wishlists");
+      this.setState({
+        errorMessage: "unable to create wishlists"
+      });
+    }
+
     this.setState({
       name: "",
       title: "",
@@ -146,6 +153,9 @@ class createLists extends Component {
               Create Wishlists
             </Button>
           </form>
+          <div>
+            <p style={{ color: "red" }}>{this.state.errorMessage}</p>
+          </div>
           <div style={{ margin: "30px" }}>
             <Link to="/wishlists" className={styles.links}>
               cancel
@@ -162,6 +172,11 @@ let form = {
   margin: "0 auto"
 };
 
+const mapStateToProps = state => {
+  return {
+    PostError: state.Wish.errorPost
+  };
+};
 const mapDispatchToProps = dispatch => {
   return {
     handleWishlists: (name, title, description, url, productName, price) =>
@@ -171,4 +186,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default withRouter(connect(null, mapDispatchToProps)(createLists));
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(createLists)
+);
