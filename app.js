@@ -7,32 +7,31 @@ const Users = require("./Models/Users");
 const Ideas = require("./Models/Ideas");
 const Wislists = require("./Models/WishLists");
 const UserRoutes = require("./Routes/User");
+const WishListsController = require("./Routes/Wishlists");
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
-// app.get("/", (req, res) => {
-//   res.status("200").json({ response: "hellow" });
-// });
-
 app.use("/vivid", UserRoutes);
+app.use("/vivid", WishListsController);
+
 app.use((req, res) => {
   res.json({ response: "endpoint not found" });
 });
 Users.hasMany(Ideas);
 Users.hasMany(Wislists);
-
+Ideas.belongsTo(Users);
+Wislists.belongsTo(Users);
 const server = http.createServer(app);
-server.listen(5000, () => {
-  console.log("sever started");
-  sequelize
-    .sync({ force: true })
-    .then(result => {
-      console.log(result);
-    })
-    .catch(err => {
-      console.log(err);
+sequelize
+  .sync({ force: false })
+  .then(result => {
+    server.listen(5000, () => {
+      console.log("sever started");
     });
-});
+  })
+  .catch(err => {
+    console.log(err);
+  });

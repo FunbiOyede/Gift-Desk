@@ -1,23 +1,20 @@
 import * as ActionTypes from "../Actions/ActionTypes";
 const initialStateWishlists = {
-  name: "",
-  title: "",
-  Description: "",
-  url: "",
-  productName: "",
-  price: 0
+  Wishlists: [],
+  error: false
 };
 
 export const Wishlists = (state = initialStateWishlists, action) => {
-  if (action.type === ActionTypes.GET_WISHLISTS) {
-    console.log(action.Name);
+  if (action.type === ActionTypes.FETCH_WISHLISTS_SUCCESS) {
     return {
-      name: action.Name,
-      title: action.Title,
-      Description: action.Description,
-      url: action.Url,
-      productName: action.ProductName,
-      price: action.Price
+      ...state,
+      Wishlists: [...action.response]
+    };
+  }
+  if (action.type === ActionTypes.FETCH_WISHLISTS_FAILED) {
+    return {
+      ...state,
+      error: true
     };
   }
   return state;

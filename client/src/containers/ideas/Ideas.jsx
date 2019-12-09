@@ -4,7 +4,7 @@ import Navigation from "../../components/Navigation/Navigation";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import SaveIcon from "@material-ui/icons/Save";
-import { get_user_ideas } from "../../store/Actions/ActionCreators";
+import { create_ideas } from "../../store/Actions/ActionCreators";
 import { connect } from "react-redux";
 import styles from "./Ideas.module.css";
 class Ideas extends Component {
@@ -119,7 +119,7 @@ let form = {
 const mapDispatchToProps = dispatch => {
   return {
     handle_user_ideas: (name, Description, url, price) =>
-      dispatch(get_user_ideas(name, Description, url, price))
+      dispatch(create_ideas(name, Description, url, price))
   };
 };
 

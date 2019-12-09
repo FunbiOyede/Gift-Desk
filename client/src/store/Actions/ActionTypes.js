@@ -5,3 +5,16 @@ export const AUTH_PASSED = "AUTH_PASSED";
 export const AUTH_FAILED = "AUTH_FAILED";
 
 export const LOGIN_START = "LOGIN_START";
+
+export const GET_USER_DETAILS = "GET_USER_DETAILS";
+export const POST_USER_DETAILS = "POST_USER_DETAILS";
+export const POST_SUCCESS = "POST_SUCCESS";
+
+/****************Post wislists Actions***********/
+export const POST_WISHLIST = "POST_WISHLIST";
+export const POST_WISHLIST_SUCCESS = "POST_WISHLIST_SUCCESS";
+export const POST_WISHLIST_FAILED = "POST_WISHLIST_FAILED";
+
+export const FETCH_WISHLISTS = "FETCH_WISHLISTS";
+export const FETCH_WISHLISTS_SUCCESS = "FETCH_WISHLIST_SUCCESS";
+export const FETCH_WISHLISTS_FAILED = "FETCH_WISHLIST_FAILED";

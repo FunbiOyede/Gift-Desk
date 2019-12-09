@@ -13,17 +13,47 @@ import Ideas from "./containers/ideas/Ideas";
 import NonUsersIdeas from "./containers/ideas/NonUsersIdeas";
 import CreateLists from "../src/containers/wishlists/createLists";
 import Signout from "./components/SignOut/Signout";
+import { connect } from "react-redux";
 const Register = React.lazy(() => import("./components/Register/Register"));
 const Login = React.lazy(() => import("./components/Login/Login"));
 const Home = React.lazy(() => import("../src/components/Home/Home"));
-const Error = React.lazy(() => import("./components/Error/Error"));
-function App() {
+// const Error = React.lazy(() => import("./components/Error/Error"));
+function App(props) {
+  // let AuthGaurds;
+  // AuthGaurds = (
+  //   <Switch>
+  //     <Route path="/" exact component={Home} />
+  //     <Route path="/register" exact component={Register} />
+  //     <Route path="/login" exact component={Login} />
+  //     <Redirect to="/" />
+  //     <Route component={Error} />
+  //   </Switch>
+  // );
+
+  // if (props.isRegistered) {
+  //   AuthGaurds = (
+  //     <Switch>
+  //       <Route path="/dashboard" exact component={Dashboard} />
+  //       <Route path="/wishlists" exact component={Wishlists} />
+  //       <Route path="/settings" exact component={Setting} />
+  //       <Route path="/lists" exact component={ShoppingLists} />
+  //       <Route path="/idea" exact component={Idea} />
+  //       <Route path="/ideas" exact component={Ideas} />
+  //       <Route path="/create" exact component={create} />
+  //       <Route path="/CreateIdeas" exact component={CreateIdeas} />
+  //       <Route path="/NonUsersIdeas" exact component={NonUsersIdeas} />
+  //       <Route path="/create" exact component={CreateLists} />
+
+  //       <Route path="/signout" exact component={Signout} />
+  //     </Switch>
+  //   );
+  // }
+
   return (
     <div className="App">
       <BrowserRouter>
         <React.Suspense fallback={<p>loading...</p>}>
           <Switch>
-            <Route path="/" exact component={Home} />
             <Route path="/dashboard" exact component={Dashboard} />
             <Route path="/wishlists" exact component={Wishlists} />
             <Route path="/settings" exact component={Setting} />
@@ -34,10 +64,11 @@ function App() {
             <Route path="/CreateIdeas" exact component={CreateIdeas} />
             <Route path="/NonUsersIdeas" exact component={NonUsersIdeas} />
             <Route path="/create" exact component={CreateLists} />
+            <Route path="/" exact component={Home} />
             <Route path="/register" exact component={Register} />
             <Route path="/login" exact component={Login} />
+
             <Route path="/signout" exact component={Signout} />
-            <Route component={Error} />
           </Switch>
         </React.Suspense>
       </BrowserRouter>
@@ -45,4 +76,9 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    isRegistered: state.isRegsitered
+  };
+};
+export default connect(mapStateToProps)(App);

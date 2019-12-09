@@ -3,9 +3,9 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import SaveIcon from "@material-ui/icons/Save";
 import Navigation from "../../components/Navigation/Navigation";
-import { get_wishlists } from "../../store/Actions/ActionCreators";
+import { create_wishlists } from "../../store/Actions/ActionCreators";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Aide from "../../components/HOC/Aide";
 import styles from "./createLists.module.css";
 class createLists extends Component {
@@ -63,6 +63,16 @@ class createLists extends Component {
       this.state.productName,
       this.state.price
     );
+
+    this.props.history.push("/wishlists");
+    this.setState({
+      name: "",
+      title: "",
+      Description: "",
+      url: "",
+      productName: "",
+      price: ""
+    });
   };
 
   render() {
@@ -79,6 +89,7 @@ class createLists extends Component {
               margin="normal"
               variant="outlined"
               onChange={this.getName}
+              value={this.state.name}
             />
             <TextField
               placeholder="25th Birthday"
@@ -86,6 +97,7 @@ class createLists extends Component {
               margin="normal"
               variant="outlined"
               onChange={this.getTitle}
+              value={this.state.title}
             />
             <TextField
               label="Description"
@@ -94,6 +106,7 @@ class createLists extends Component {
               margin="normal"
               variant="outlined"
               onChange={this.getDescription}
+              value={this.state.Description}
             />
 
             <TextField
@@ -102,6 +115,7 @@ class createLists extends Component {
               margin="normal"
               variant="outlined"
               onChange={this.getProductUrl}
+              value={this.state.url}
             />
             <TextField
               placeholder="E.g. Nike Fear Of God"
@@ -109,6 +123,7 @@ class createLists extends Component {
               margin="normal"
               variant="outlined"
               onChange={this.getProductName}
+              value={this.state.productName}
             />
             <TextField
               label="price"
@@ -116,8 +131,10 @@ class createLists extends Component {
                 shrink: true
               }}
               margin="normal"
+              type="number"
               variant="outlined"
               onChange={this.getProducPrice}
+              value={this.state.price.toString()}
             />
             <Button
               variant="contained"
@@ -148,8 +165,10 @@ let form = {
 const mapDispatchToProps = dispatch => {
   return {
     handleWishlists: (name, title, description, url, productName, price) =>
-      dispatch(get_wishlists(name, title, description, url, productName, price))
+      dispatch(
+        create_wishlists(name, title, description, url, productName, price)
+      )
   };
 };
 
-export default connect(null, mapDispatchToProps)(createLists);
+export default withRouter(connect(null, mapDispatchToProps)(createLists));

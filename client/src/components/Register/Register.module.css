@@ -12,3 +12,16 @@
   text-decoration-line: underline;
   color: rgb(46, 44, 44);
 }
+
+.Button {
+  font-size: 15px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(41, 122, 251);
+  border-radius: 3px;
+  padding: 15px 20px;
+  outline: none;
+  text-align: center;
+  border: 3px solid rgb(41, 122, 251);
+  margin-bottom: 19px;
+}
