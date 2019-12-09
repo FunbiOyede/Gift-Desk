@@ -36,6 +36,14 @@ class WishListsController {
         res.status(400).json(error);
       });
   }
+
+  static getNumberOfWislists(req, res, next) {
+    Wislists.findAndCountAll().then(result => {
+      res.status(200).json({
+        count: result.count
+      });
+    });
+  }
 }
 
 module.exports = WishListsController;

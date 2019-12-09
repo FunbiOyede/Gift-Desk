@@ -78,12 +78,22 @@ export const create_wishlists = (...wishlists) => {
  * 2. ==> GET
  *
  */
+/**
+ * @function fetch_wishlists
+ * @description a sync function that tarts the fetching process for wishlists
+ */
 export const fetch_wislists = () => {
   return {
     type: ActionTypes.FETCH_WISHLISTS
   };
 };
 
+/**
+ *
+ * @param {*} response
+ * @function fetch_wishlists_success
+ * @description a sync function that  get response from server
+ */
 export const fetch_wishlists_success = response => {
   return {
     type: ActionTypes.FETCH_WISHLISTS_SUCCESS,
@@ -91,12 +101,23 @@ export const fetch_wishlists_success = response => {
   };
 };
 
+/**
+ *
+ * @param {*} response
+ * @function fetch_wishlists_failure
+ * @description a sync function that  get response from server
+ */
+
 export const fetch_wishlists_failure = response => {
   return {
     type: ActionTypes.FETCH_WISHLISTS_FAILED,
     response: response
   };
 };
+
+/**
+ * @description fetches wishlits
+ */
 export const get_wishlists = () => {
   return dispatch => {
     dispatch(fetch_wislists());

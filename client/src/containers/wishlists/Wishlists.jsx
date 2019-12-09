@@ -11,10 +11,11 @@ import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { connect } from "react-redux";
-
+import axios from "axios";
 class Wishlists extends Component {
   state = {
-    user: {}
+    user: {},
+    wishlistNumber: 0
   };
   RedirectToCreateWishLists = () => {
     this.props.history.push("/create");
@@ -22,6 +23,12 @@ class Wishlists extends Component {
 
   componentDidMount() {
     this.props.FetchWishlists();
+    axios.get("http://localhost:5000/vivid/wishlists/count").then(res => {
+      console.log(res.data.count);
+      this.setState({
+        wishlistNumber: res.data.count
+      });
+    });
   }
 
   render() {
@@ -33,9 +40,9 @@ class Wishlists extends Component {
       <div>
         <Navigation />
 
-        <h3>Wish lists</h3>
+        <Typography>Wish lists</Typography>
         {/* count number of query */}
-        <p>You have {this.props.child} upcoming wish lists</p>
+        <p>You have {this.state.wishlistNumber} wish lists</p>
         {ErrorMessage}
         <div>
           <button
