@@ -4,7 +4,6 @@ import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Wishlists from "./containers/wishlists/Wishlists";
 import Setting from "./containers/setting/Setting";
-import ShoppingLists from "./containers/shoppingLists/ShoppingLists";
 import Idea from "./containers/ideas/Idea";
 import create from "./containers/wishlists/createLists";
 import Dashboard from "./components/dashboard/Dashboard";
@@ -57,7 +56,6 @@ function App(props) {
             <Route path="/dashboard" exact component={Dashboard} />
             <Route path="/wishlists" exact component={Wishlists} />
             <Route path="/settings" exact component={Setting} />
-            <Route path="/lists" exact component={ShoppingLists} />
             <Route path="/idea" exact component={Idea} />
             <Route path="/ideas" exact component={Ideas} />
             <Route path="/create" exact component={create} />

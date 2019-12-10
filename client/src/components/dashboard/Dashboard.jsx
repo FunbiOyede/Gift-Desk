@@ -12,8 +12,6 @@ const Dashboard = props => (
       <header>
         <h4 className={styles.Heading}>Dashboard</h4>
 
-        {/* <h3>{props.Date}</h3> */}
-
         <h4>Hi {props.Username} what do you want to do today? </h4>
       </header>
 
@@ -28,7 +26,7 @@ const Dashboard = props => (
           </Typography>
         </Link>
 
-        <Link className={styles.DashboardList} style={paper} to="/lists">
+        {/* <Link className={styles.DashboardList} style={paper} to="/lists">
           <Typography variant="h6" component="h2">
             <span role="img" aria-label="image">
               🛒
@@ -36,7 +34,7 @@ const Dashboard = props => (
             Shopping Lists
             <p>The items you've reserved on friends you love</p>
           </Typography>
-        </Link>
+        </Link> */}
 
         <Link className={styles.DashboardList} style={paper} to="/idea">
           <Typography variant="h6" component="h2">
