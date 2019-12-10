@@ -73,8 +73,17 @@ class WishListsController {
       },
       { where: { id: id } }
     )
-      .then(result => res.status(200).json("wishlists updated"))
+      .then(result => res.status(200).json(result))
       .catch(error => res.status(400).json(error));
+  }
+
+  static findAWish(req, res, next) {
+    Wislists.findByPk(req.params.id)
+      .then(wishlists => res.status(200).json(wishlists))
+
+      .catch(error => {
+        res.status(400).json(error);
+      });
   }
 }
 

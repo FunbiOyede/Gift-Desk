@@ -12,7 +12,7 @@ import Ideas from "./containers/ideas/Ideas";
 import NonUsersIdeas from "./containers/ideas/NonUsersIdeas";
 import CreateLists from "../src/containers/wishlists/createLists";
 import Signout from "./components/SignOut/Signout";
-
+import UpdateWislists from "./containers/UpdateWislists/UpdateWislists";
 const Register = React.lazy(() => import("./components/Register/Register"));
 const Login = React.lazy(() => import("./components/Login/Login"));
 const Home = React.lazy(() => import("../src/components/Home/Home"));
@@ -55,6 +55,11 @@ function App(props) {
           <Switch>
             <Route path="/dashboard" exact component={Dashboard} />
             <Route path="/wishlists" exact component={Wishlists} />
+            <Route
+              path="/updateWishlists/:id"
+              exact
+              component={UpdateWislists}
+            />
             <Route path="/settings" exact component={Setting} />
             <Route path="/idea" exact component={Idea} />
             <Route path="/ideas" exact component={Ideas} />

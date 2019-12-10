@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import Navigation from "../../components/Navigation/Navigation";
 import * as ActionCreators from "../../store/Actions/ActionCreators";
 
@@ -98,10 +98,26 @@ export class Wishlists extends Component {
                   <Button
                     variant="contained"
                     color="primary"
+                    style={{ marginLeft: "10px" }}
                     onClick={() => this.props.deleteWishlists(wish.id)}
                   >
                     delete
                   </Button>
+                  <Link
+                    style={{
+                      marginLeft: "10px",
+                      fontSize: "15px",
+                      textDecoration: "none",
+                      color: "#fff",
+                      backgroundColor: "#297AFB",
+                      borderRadius: "3px",
+                      padding: "15px 43px",
+                      textAlign: "center"
+                    }}
+                    to={"/updateWishlists/" + wish.id}
+                  >
+                    Edit
+                  </Link>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
             </div>

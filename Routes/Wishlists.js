@@ -18,4 +18,7 @@ Router.delete("/wishlists/delete/:id", WishlistsController.deleteWishlists);
 
 //Wishlists ==> UPDATE
 Router.put("/wishlists/update/:id", WishlistsController.updateWishlists);
+
+//Wishlists ==> GET
+Router.get("/wishlists/wish/:id", WishlistsController.findAWish);
 module.exports = Router;
