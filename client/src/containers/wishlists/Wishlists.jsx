@@ -40,7 +40,6 @@ export class Wishlists extends Component {
         <Navigation />
 
         <Typography>Wish lists</Typography>
-        {/* count number of query */}
         <p>You have {this.state.wishlistNumber} wish lists</p>
         {ErrorMessage}
         <div>
