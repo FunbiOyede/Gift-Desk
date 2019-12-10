@@ -9,7 +9,7 @@ import HomeNav from "../Navigation/HomeNavigation";
 import Aide from "../HOC/Aide";
 import { connect } from "react-redux";
 import { create_user } from "../../store/Actions/ActionCreators";
-class Register extends Component {
+export class Register extends Component {
   state = {
     Name: "",
     email: "",
@@ -46,6 +46,9 @@ class Register extends Component {
             variant="h6"
             style={{ fontWeight: 700, color: "rgb(56, 64, 72)" }}
           >
+            <span role="img" aria-label="image">
+              🛍️
+            </span>{" "}
             Register
           </Typography>
 

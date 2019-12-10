@@ -26,16 +26,6 @@ const Dashboard = props => (
           </Typography>
         </Link>
 
-        {/* <Link className={styles.DashboardList} style={paper} to="/lists">
-          <Typography variant="h6" component="h2">
-            <span role="img" aria-label="image">
-              🛒
-            </span>
-            Shopping Lists
-            <p>The items you've reserved on friends you love</p>
-          </Typography>
-        </Link> */}
-
         <Link className={styles.DashboardList} style={paper} to="/idea">
           <Typography variant="h6" component="h2">
             <span role="img" aria-label="image">

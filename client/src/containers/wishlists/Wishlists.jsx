@@ -12,7 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { connect } from "react-redux";
 import axios from "axios";
-class Wishlists extends Component {
+export class Wishlists extends Component {
   state = {
     user: {},
     wishlistNumber: 0

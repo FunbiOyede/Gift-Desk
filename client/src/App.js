@@ -12,7 +12,7 @@ import Ideas from "./containers/ideas/Ideas";
 import NonUsersIdeas from "./containers/ideas/NonUsersIdeas";
 import CreateLists from "../src/containers/wishlists/createLists";
 import Signout from "./components/SignOut/Signout";
-import { connect } from "react-redux";
+
 const Register = React.lazy(() => import("./components/Register/Register"));
 const Login = React.lazy(() => import("./components/Login/Login"));
 const Home = React.lazy(() => import("../src/components/Home/Home"));
@@ -74,9 +74,4 @@ function App(props) {
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    isRegistered: state.isRegsitered
-  };
-};
-export default connect(mapStateToProps)(App);
+export default App;
