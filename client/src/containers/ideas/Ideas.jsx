@@ -92,7 +92,7 @@ class Ideas extends Component {
               variant="contained"
               style={{ background: "rgb(47, 108, 172)", color: "white" }}
               size="large"
-              startIcon={<SaveIcon />}
+              Icon={<SaveIcon />}
               onClick={this.HandleUserIdeas}
             >
               Create Wishlists

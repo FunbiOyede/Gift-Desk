@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
+
 import SaveIcon from "@material-ui/icons/Save";
 import Navigation from "../../components/Navigation/Navigation";
 import { create_wishlists } from "../../store/Actions/ActionCreators";
@@ -15,8 +15,7 @@ class createLists extends Component {
     Description: "",
     url: "",
     productName: "",
-    price: 0,
-    errorMessage: ""
+    price: 0
   };
 
   getName = e => {
@@ -65,20 +64,13 @@ class createLists extends Component {
       this.state.price
     );
 
-    if (this.props.PostError) {
-      this.props.history.push("/wishlists");
-      this.setState({
-        errorMessage: "unable to create wishlists"
-      });
-    }
-
     this.setState({
       name: "",
       title: "",
       Description: "",
       url: "",
       productName: "",
-      price: ""
+      price: 0
     });
   };
 
@@ -143,18 +135,33 @@ class createLists extends Component {
               onChange={this.getProducPrice}
               value={this.state.price.toString()}
             />
-            <Button
+            <Link
+              to="/wishlists"
               variant="contained"
-              style={{ background: "rgb(47, 108, 172)", color: "white" }}
+              style={{
+                fontSize: "15px",
+                textDecoration: "none",
+                background: "rgb(47, 108, 172)",
+                color: "white",
+                borderRadius: "3px",
+                padding: "15px 43px",
+                textAlign: "center"
+              }}
               size="large"
-              startIcon={<SaveIcon />}
               onClick={this.saveDetails}
             >
+              <SaveIcon />
               Create Wishlists
-            </Button>
+            </Link>
           </form>
           <div>
-            <p style={{ color: "red" }}>{this.state.errorMessage}</p>
+            <div style={{ color: "red" }}>
+              {this.props.PostError ? (
+                <p>
+                  unable to create wishlists connect to the internet and reload
+                </p>
+              ) : null}
+            </div>
           </div>
           <div style={{ margin: "30px" }}>
             <Link to="/wishlists" className={styles.links}>
