@@ -68,7 +68,7 @@ export const create_wishlists = (...wishlists) => {
         dispatch(post_wishlists_success(response));
       })
       .catch(error => {
-        console.log(error);
+        console.log(error.response.status);
         dispatch(post_wishlists_failed(error));
       });
   };

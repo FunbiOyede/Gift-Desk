@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
-
+import Button from "@material-ui/core/Button";
 import SaveIcon from "@material-ui/icons/Save";
 import Navigation from "../../components/Navigation/Navigation";
 import { create_wishlists } from "../../store/Actions/ActionCreators";
@@ -63,6 +63,10 @@ class createLists extends Component {
       this.state.productName,
       this.state.price
     );
+
+    if (this.props.PostError) {
+      this.props.history.push("/wishlists");
+    }
 
     this.setState({
       name: "",
@@ -135,24 +139,16 @@ class createLists extends Component {
               onChange={this.getProducPrice}
               value={this.state.price.toString()}
             />
-            <Link
+            <Button
               to="/wishlists"
               variant="contained"
-              style={{
-                fontSize: "15px",
-                textDecoration: "none",
-                background: "rgb(47, 108, 172)",
-                color: "white",
-                borderRadius: "3px",
-                padding: "15px 43px",
-                textAlign: "center"
-              }}
+              style={{ background: "rgb(47, 108, 172)", color: "white" }}
               size="large"
+              startIcon={<SaveIcon />}
               onClick={this.saveDetails}
             >
-              <SaveIcon />
               Create Wishlists
-            </Link>
+            </Button>
           </form>
           <div>
             <div style={{ color: "red" }}>
