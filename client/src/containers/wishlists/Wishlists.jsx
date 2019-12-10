@@ -65,8 +65,8 @@ export class Wishlists extends Component {
           </button>
         </div>
         <div>
-          {this.props.wishlist.map((wish, index) => (
-            <div key={index}>
+          {this.props.wishlist.map(wish => (
+            <div key={wish.id}>
               <ExpansionPanel
                 style={{
                   width: "50%",

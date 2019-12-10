@@ -7,7 +7,8 @@ const Users = require("./Models/Users");
 const Ideas = require("./Models/Ideas");
 const Wislists = require("./Models/WishLists");
 const UserRoutes = require("./Routes/User");
-const WishListsController = require("./Routes/Wishlists");
+const WishListsRoutes = require("./Routes/Wishlists");
+const IdeasRoutes = require("./Routes/Ideas");
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -15,7 +16,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use("/vivid", UserRoutes);
-app.use("/vivid", WishListsController);
+app.use("/vivid", WishListsRoutes);
+app.use("/vivid", IdeasRoutes);
 
 app.use((req, res) => {
   res.json({ response: "endpoint not found" });
