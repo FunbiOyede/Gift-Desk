@@ -44,6 +44,38 @@ class WishListsController {
       });
     });
   }
+
+  static deleteWishlists(req, res, next) {
+    Wislists.findByPk(req.params.id)
+      .then(wishlists => wishlists.destroy())
+      .then(result => res.status(200).json("wishlists successfully deleted"))
+      .catch(error => {
+        res.status(400).json(error);
+      });
+  }
+
+  static updateWishlists(req, res, next) {
+    const id = req.params.id;
+    const Name = req.body.Name;
+    const Title = req.body.Title;
+    const Description = req.body.Description;
+    const Url = req.body.Url;
+    const ItemName = req.body.ItemName;
+    const Price = req.body.Price;
+    Wislists.update(
+      {
+        forWhom: Name,
+        Title: Title,
+        Description: Description,
+        Url: Url,
+        ItemName: ItemName,
+        Price: Price
+      },
+      { where: { id: id } }
+    )
+      .then(result => res.status(200).json("wishlists updated"))
+      .catch(error => res.status(400).json(error));
+  }
 }
 
 module.exports = WishListsController;

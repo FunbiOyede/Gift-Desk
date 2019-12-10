@@ -24,6 +24,16 @@ export const Wishlists = (state = initialStateWishlists, action) => {
       error: true
     };
   }
+
+  if (action.type === ActionTypes.DELETE_WISHLISTS_SUCCESS) {
+    const updatedWishlists = state.Wishlists.filter(
+      result => result.id !== action.wishId
+    );
+    return {
+      ...state,
+      Wishlists: updatedWishlists
+    };
+  }
   return state;
 };
 

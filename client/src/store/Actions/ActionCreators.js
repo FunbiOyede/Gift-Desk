@@ -115,7 +115,7 @@ export const fetch_wishlists_failure = response => {
 };
 
 /**
- * @description fetches wishlits
+ * @description fetches wishlits aync
  */
 export const get_wishlists = () => {
   return dispatch => {
@@ -127,6 +127,63 @@ export const get_wishlists = () => {
       })
       .catch(error => {
         dispatch(fetch_wishlists_failure(error));
+      });
+  };
+};
+
+/*****************************************************
+ * 3. ==> DELETE
+ *
+ */
+
+/**
+ * @function delete_wishlists
+ * @description a sync function that starts the process for  deleting wishlists
+ */
+export const delete_wislists = () => {
+  return {
+    type: ActionTypes.DELETE_WISHLISTS
+  };
+};
+
+/**
+ *
+ * @param {*} response
+ * @function delete_wishlists_success
+ * @description a sync function that  get success response from server
+ */
+export const delete_wishlists_success = WishlistsId => {
+  return {
+    type: ActionTypes.DELETE_WISHLISTS_SUCCESS,
+    wishId: WishlistsId
+  };
+};
+
+/**
+ *
+ * @param {*} response
+ * @function delete_wishlists_failure
+ * @description a sync function that  get a failed response from server
+ */
+
+export const delete_wishlists_failure = response => {
+  return {
+    type: ActionTypes.DELETE_WISHLISTS_FAILED,
+    response: response
+  };
+};
+
+export const deleteWishlists = id => {
+  return dispatch => {
+    dispatch(delete_wislists());
+    axios
+      .delete(`http://localhost:5000/vivid/wishlists/delete/${id}`)
+      .then(response => {
+        console.log(response.data);
+        dispatch(delete_wishlists_success(id));
+      })
+      .catch(error => {
+        dispatch(delete_wishlists_failure(error));
       });
   };
 };

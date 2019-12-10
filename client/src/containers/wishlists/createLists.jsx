@@ -64,7 +64,7 @@ class createLists extends Component {
       this.state.price
     );
 
-    if (this.props.PostError) {
+    if (!this.props.PostError) {
       this.props.history.push("/wishlists");
     }
 

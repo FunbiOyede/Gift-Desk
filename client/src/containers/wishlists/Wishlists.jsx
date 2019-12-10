@@ -22,12 +22,12 @@ export class Wishlists extends Component {
   };
 
   componentDidMount() {
+    this.props.FetchWishlists();
     axios.get("http://localhost:5000/vivid/wishlists/count").then(res => {
       this.setState({
         wishlistNumber: res.data.count
       });
     });
-    this.props.FetchWishlists();
   }
 
   render() {
@@ -95,6 +95,13 @@ export class Wishlists extends Component {
                   <Button variant="contained" color="primary" href={wish.Url}>
                     View Online
                   </Button>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={() => this.props.deleteWishlists(wish.id)}
+                  >
+                    delete
+                  </Button>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
             </div>
@@ -106,7 +113,8 @@ export class Wishlists extends Component {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    FetchWishlists: () => dispatch(ActionCreators.get_wishlists())
+    FetchWishlists: () => dispatch(ActionCreators.get_wishlists()),
+    deleteWishlists: id => dispatch(ActionCreators.deleteWishlists(id))
   };
 };
 const mapStateToProps = state => {
