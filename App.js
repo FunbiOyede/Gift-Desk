@@ -11,21 +11,27 @@ const WishListsRoutes = require("./Routes/Wishlists");
 const IdeasRoutes = require("./Routes/Ideas");
 const app = express();
 
+// some middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
+// routes
 app.use("/vivid", UserRoutes);
 app.use("/vivid", WishListsRoutes);
 app.use("/vivid", IdeasRoutes);
 
+// no endpoint handler
 app.use((req, res) => {
   res.json({ response: "endpoint not found" });
 });
+
+// model associations
 Users.hasMany(Ideas);
 Users.hasMany(Wislists);
 Ideas.belongsTo(Users);
 Wislists.belongsTo(Users);
+
 const server = http.createServer(app);
 sequelize
   .sync({ force: false })
