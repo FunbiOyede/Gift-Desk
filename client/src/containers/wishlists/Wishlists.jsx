@@ -23,6 +23,7 @@ export class Wishlists extends Component {
 
   componentDidMount() {
     this.props.FetchWishlists();
+
     axios.get("http://localhost:5000/vivid/wishlists/count").then(res => {
       this.setState({
         wishlistNumber: res.data.count

@@ -179,7 +179,6 @@ export const deleteWishlists = id => {
     axios
       .delete(`http://localhost:5000/vivid/wishlists/delete/${id}`)
       .then(response => {
-        console.log(response.data);
         dispatch(delete_wishlists_success(id));
       })
       .catch(error => {

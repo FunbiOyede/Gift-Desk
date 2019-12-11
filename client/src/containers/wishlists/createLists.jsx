@@ -64,9 +64,9 @@ class createLists extends Component {
       this.state.price
     );
 
-    if (!this.props.PostError) {
-      this.props.history.push("/wishlists");
-    }
+    // if (!this.props.PostError) {
+    //   this.props.history.push("/wishlists");
+    // }
 
     this.setState({
       name: "",
@@ -139,8 +139,8 @@ class createLists extends Component {
               onChange={this.getProducPrice}
               value={this.state.price.toString()}
             />
-            <Button
-              to="/wishlists"
+            <Link
+              to={this.props.PostError ? "/wishlists" : null}
               variant="contained"
               style={{ background: "rgb(47, 108, 172)", color: "white" }}
               size="large"
@@ -148,7 +148,7 @@ class createLists extends Component {
               onClick={this.saveDetails}
             >
               Create Wishlists
-            </Button>
+            </Link>
           </form>
           <div>
             <div style={{ color: "red" }}>
