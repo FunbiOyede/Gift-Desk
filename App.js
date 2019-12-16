@@ -27,14 +27,23 @@ app.use((req, res) => {
 });
 
 // model associations
-Users.hasMany(Ideas);
-Users.hasMany(Wislists);
-Ideas.belongsTo(Users);
-Wislists.belongsTo(Users);
+Users.hasMany(Ideas, {
+  foreignKey: "UserId"
+});
+Ideas.belongsTo(Users, {
+  foreignKey: "UserId"
+});
+Users.hasMany(Wislists, {
+  foreignKey: "UserId"
+});
+
+Wislists.belongsTo(Users, {
+  foreignKey: "UserId"
+});
 
 const server = http.createServer(app);
 sequelize
-  .sync({ force: false })
+  .sync({ force: true })
   .then(result => {
     server.listen(5000, () => {
       console.log("sever started");

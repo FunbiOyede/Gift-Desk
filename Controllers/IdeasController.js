@@ -97,9 +97,13 @@ class IdeasController {
    * @description get an idea by id
    */
   static getIdea(req, res, next) {
-    Ideas.findByPk(req.params.id)
-      .then(idea => res.status(200).json(idea))
-      .catch(error => res.status(400).json(error));
+    Ideas.findByPk(req.params.id).then(idea => {
+      if (idea) {
+        res.status(200).json(idea);
+      } else {
+        res.status(404).json({ repsonse: "not found" });
+      }
+    });
   }
 
   /**
