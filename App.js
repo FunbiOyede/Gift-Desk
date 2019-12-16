@@ -30,6 +30,7 @@ app.use((req, res) => {
 Users.hasMany(Ideas, {
   foreignKey: "UserId"
 });
+
 Ideas.belongsTo(Users, {
   foreignKey: "UserId"
 });

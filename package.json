@@ -19,6 +19,7 @@
   },
   "scripts": {
     "start": "nodemon App.js",
-    "client": "cd client; yarn start"
+    "client": "cd client; yarn start",
+    "test": "cd client; yarn test"
   }
 }
