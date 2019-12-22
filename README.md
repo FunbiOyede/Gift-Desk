@@ -2,7 +2,7 @@
 
 ## Vivid App
 
-Vivid is an open-source web & app that helps you store gift ideas for friends and family.
+Vivid is a web App for creating  wishlists to help you find the perfect gift friends and family.
 
 Web Application is made using Node, Express, Mysql, Sequelize & ReactJS.
 
