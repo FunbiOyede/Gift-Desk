@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import SaveIcon from "@material-ui/icons/Save";
 import Navigation from "../../components/Navigation/Navigation";
 import { create_wishlists } from "../../store/Actions/ActionCreators";
 import { connect } from "react-redux";
@@ -140,11 +138,11 @@ class createLists extends Component {
               value={this.state.price.toString()}
             />
             <Link
-              to={this.props.PostError ? "/wishlists" : null}
+              // to={this.props.PostError ? "/wishlists" : null}
+              to="/wishlists"
               variant="contained"
               style={{ background: "rgb(47, 108, 172)", color: "white" }}
               size="large"
-              startIcon={<SaveIcon />}
               onClick={this.saveDetails}
             >
               Create Wishlists

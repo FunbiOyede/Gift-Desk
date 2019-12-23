@@ -1,4 +1,4 @@
-const Wislists = require("../Models/WishLists");
+const Wislists = require("../models/WishLists");
 
 class WishListsController {
   constructor() {}
@@ -17,14 +17,16 @@ class WishListsController {
     const Url = req.body.Url;
     const ItemName = req.body.ItemName;
     const Price = req.body.Price;
-
+    const UserId = req.body.User;
+    console.log();
     Wislists.create({
       forWhom: Name,
       Title: Title,
       Description: Description,
       Url: Url,
       ItemName: ItemName,
-      Price: Price
+      Price: Price,
+      UserId: UserId
     })
       .then(response => {
         res.status(200).json(response);

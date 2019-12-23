@@ -1,4 +1,4 @@
-const User = require("../Models/Users");
+const User = require("../models/Users");
 class UserController {
   constructor() {}
 

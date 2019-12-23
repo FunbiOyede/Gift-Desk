@@ -1,4 +1,4 @@
-const Ideas = require("../Models/Ideas");
+const Ideas = require("../models/Ideas");
 
 class IdeasController {
   constructor() {}

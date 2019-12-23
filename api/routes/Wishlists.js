@@ -2,7 +2,7 @@ const express = require("express");
 
 const Router = express.Router();
 
-const WishlistsController = require("../Controllers/WislistsController");
+const WishlistsController = require("../../services/Wislists");
 
 // Wishlists/create ==> POST CREATE A WISHLIST
 Router.post("/wishlists/create", WishlistsController.createWishlists);

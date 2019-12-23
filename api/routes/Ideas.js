@@ -2,7 +2,7 @@ const express = require("express");
 
 const Router = express.Router();
 
-const IdeasController = require("../Controllers/IdeasController");
+const IdeasController = require("../../services/Ideas");
 
 // ideas/create => POST CREATE AN IDEA
 Router.post("/ideas/create", IdeasController.createIdeas);

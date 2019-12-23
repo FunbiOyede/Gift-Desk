@@ -2,13 +2,14 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const http = require("http");
 const cors = require("cors");
-const sequelize = require("./Utils/Database");
-const Users = require("./Models/Users");
-const Ideas = require("./Models/Ideas");
-const Wislists = require("./Models/WishLists");
-const UserRoutes = require("./Routes/User");
-const WishListsRoutes = require("./Routes/Wishlists");
-const IdeasRoutes = require("./Routes/Ideas");
+const sequelize = require("./loaders/sequelize");
+const Users = require("./models/Users");
+const Ideas = require("./models/Ideas");
+const Wislists = require("./models/WishLists");
+const UserRoutes = require("./api/routes/User");
+const WishListsRoutes = require("./api/routes/Wishlists");
+const IdeasRoutes = require("./api/routes/Ideas");
+const notFound = require("./api/middlewares/index");
 const app = express();
 
 // some middleware
@@ -22,9 +23,7 @@ app.use("/vivid", WishListsRoutes);
 app.use("/vivid", IdeasRoutes);
 
 // no endpoint handler
-app.use((req, res) => {
-  res.json({ response: "endpoint not found" });
-});
+app.use(notFound);
 
 // model associations
 Users.hasMany(Ideas, {
@@ -44,7 +43,7 @@ Wislists.belongsTo(Users, {
 
 const server = http.createServer(app);
 sequelize
-  .sync({ force: true })
+  .sync({ force: false })
   .then(result => {
     server.listen(5000, () => {
       console.log("sever started");

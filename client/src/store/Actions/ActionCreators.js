@@ -60,7 +60,8 @@ export const create_wishlists = (...wishlists) => {
       Description: wishlists[2],
       Url: wishlists[3],
       ItemName: wishlists[4],
-      Price: wishlists[5]
+      Price: wishlists[5],
+      User: 1
     };
     axios
       .post("http://localhost:5000/vivid/wishlists/create", wishlist)
