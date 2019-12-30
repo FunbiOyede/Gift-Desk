@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
 import Navigation from "../../components/Navigation/Navigation";
+import Button from "@material-ui/core/Button";
 import { create_wishlists } from "../../store/Actions/ActionCreators";
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import Aide from "../../components/HOC/Aide";
 import styles from "./createLists.module.css";
+import axios from "axios";
 class createLists extends Component {
   state = {
     name: "",
@@ -62,10 +64,7 @@ class createLists extends Component {
       this.state.price
     );
 
-    // if (!this.props.PostError) {
-    //   this.props.history.push("/wishlists");
-    // }
-
+    this.props.history.push("/wishlists");
     this.setState({
       name: "",
       title: "",
@@ -137,8 +136,7 @@ class createLists extends Component {
               onChange={this.getProducPrice}
               value={this.state.price.toString()}
             />
-            <Link
-              // to={this.props.PostError ? "/wishlists" : null}
+            <Button
               to="/wishlists"
               variant="contained"
               style={{ background: "rgb(47, 108, 172)", color: "white" }}
@@ -146,7 +144,7 @@ class createLists extends Component {
               onClick={this.saveDetails}
             >
               Create Wishlists
-            </Link>
+            </Button>
           </form>
           <div>
             <div style={{ color: "red" }}>

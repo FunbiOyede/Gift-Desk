@@ -70,7 +70,7 @@ const Typo = {
   textAlign: "center",
   marginTop: "33px",
   fontSize: "1.5rem",
-  color: "#fff"
+  color: "black"
 };
 
 export default IdeasCreate;

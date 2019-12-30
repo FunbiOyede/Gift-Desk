@@ -14,8 +14,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 export class Wishlists extends Component {
   state = {
-    user: {},
-    wishlistNumber: 0
+    user: {}
   };
   RedirectToCreateWishLists = () => {
     this.props.history.push("/create");
@@ -23,12 +22,6 @@ export class Wishlists extends Component {
 
   componentDidMount() {
     this.props.FetchWishlists();
-
-    axios.get("http://localhost:5000/vivid/wishlists/count").then(res => {
-      this.setState({
-        wishlistNumber: res.data.count
-      });
-    });
   }
 
   render() {
@@ -41,7 +34,7 @@ export class Wishlists extends Component {
         <Navigation />
 
         <Typography>Wish lists</Typography>
-        <p>You have {this.state.wishlistNumber} wish lists</p>
+
         {ErrorMessage}
         <div>
           <button
