@@ -45,7 +45,7 @@ const server = http.createServer(app);
 sequelize
   .sync({ force: false })
   .then(result => {
-    server.listen(5000, () => {
+    server.listen(7000, () => {
       console.log("sever started");
     });
   })

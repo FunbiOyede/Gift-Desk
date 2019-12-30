@@ -1,6 +1,6 @@
-const Wislists = require("../models/WishLists");
+const Wishlists = require("../models/WishLists");
 
-class WishListsController {
+class WishListService {
   constructor() {}
 
   /**
@@ -10,30 +10,25 @@ class WishListsController {
    * @param {*} next
    * @description creates a wishlists
    */
-  static createWishlists(req, res, next) {
-    const Name = req.body.Name;
-    const Title = req.body.Title;
-    const Description = req.body.Description;
-    const Url = req.body.Url;
-    const ItemName = req.body.ItemName;
-    const Price = req.body.Price;
-    const UserId = req.body.User;
-    console.log();
-    Wislists.create({
-      forWhom: Name,
-      Title: Title,
-      Description: Description,
-      Url: Url,
+  static async createWishlists(
+    name,
+    title,
+    description,
+    url,
+    ItemName,
+    price,
+    userID
+  ) {
+    const response = await Wishlists.create({
+      forWhom: name,
+      Title: title,
+      Description: description,
+      Url: url,
       ItemName: ItemName,
-      Price: Price,
-      UserId: UserId
-    })
-      .then(response => {
-        res.status(200).json(response);
-      })
-      .catch(error => {
-        res.status(400).json(error);
-      });
+      Price: price,
+      UserId: userID
+    });
+    return { response: response };
   }
 
   /**
@@ -43,14 +38,11 @@ class WishListsController {
    * @param {*} next
    * @description fetches all wishlists
    */
-  static getAllWishlists(req, res, next) {
-    Wislists.findAll()
-      .then(wishlists => {
-        res.status(200).json(wishlists);
-      })
-      .catch(error => {
-        res.status(400).json(error);
-      });
+  static async getAllWishlists() {
+    const wishlists = await Wishlists.findAll();
+    return {
+      wishlist: wishlists
+    };
   }
 
   /**
@@ -61,7 +53,7 @@ class WishListsController {
    * @description get total number of wishlists
    */
   static getNumberOfWislists(req, res, next) {
-    Wislists.findAndCountAll().then(result => {
+    Wishlists.findAndCountAll().then(result => {
       res.status(200).json({
         count: result.count
       });
@@ -75,8 +67,10 @@ class WishListsController {
    * @param {*} next
    * @description deletes a wishlist by id
    */
-  static deleteWishlists(req, res, next) {
-    Wislists.findByPk(req.params.id)
+  static deleteWishlists(id) {
+    //continue here
+     const wishlist = await Wishlists.findByPk(id);
+    Wishlists.findByPk(req.params.id)
       .then(wishlists => wishlists.destroy())
       .then(result => res.status(200).json("wishlists successfully deleted"))
       .catch(error => {
@@ -93,13 +87,13 @@ class WishListsController {
    */
   static updateWishlists(req, res, next) {
     const id = req.params.id;
-    const Name = req.body.Name;
+    const Name = rwisheq.body.Name;
     const Title = req.body.Title;
     const Description = req.body.Description;
     const Url = req.body.Url;
     const ItemName = req.body.ItemName;
     const Price = req.body.Price;
-    Wislists.update(
+    Wishlists.update(
       {
         forWhom: Name,
         Title: Title,
@@ -121,14 +115,10 @@ class WishListsController {
    * @param {*} next
    * @description gets a wishlists by id
    */
-  static findAWish(req, res, next) {
-    Wislists.findByPk(req.params.id)
-      .then(wishlists => res.status(200).json(wishlists))
-
-      .catch(error => {
-        res.status(400).json(error);
-      });
+  static async findAWish(id) {
+    const wish = await Wishlists.findByPk(id);
+    return { wishlist: wish };
   }
 }
 
-module.exports = WishListsController;
+module.exports = WishListService;
