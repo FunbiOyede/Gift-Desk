@@ -12,3 +12,4 @@ Here's a rough roadmap of things to come
 
 - [ ] Deployment
 - [ ] Authentication
+- [ ] Sharing of gifts
