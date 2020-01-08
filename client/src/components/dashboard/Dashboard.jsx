@@ -11,8 +11,6 @@ const Dashboard = props => (
     <div>
       <header>
         <h4 className={styles.Heading}>Dashboard</h4>
-
-        <h4>Hi {props.Username} what do you want to do today? </h4>
       </header>
 
       <div style={{ display: "flex" }}>
@@ -55,7 +53,7 @@ const paper = {
   height: "200px",
   padding: "1.25rem 2.5rem 1.25rem 1.5rem",
   margin: "10px 20px",
-  backgroundColor: "whitesmoke"
+  backgroundColor: "white"
 };
 
 // const mapStateToProps = state => {

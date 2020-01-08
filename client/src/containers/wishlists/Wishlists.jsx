@@ -11,11 +11,8 @@ import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { connect } from "react-redux";
-import axios from "axios";
+
 export class Wishlists extends Component {
-  state = {
-    user: {}
-  };
   RedirectToCreateWishLists = () => {
     this.props.history.push("/create");
   };
@@ -33,7 +30,15 @@ export class Wishlists extends Component {
       <div>
         <Navigation />
 
-        <Typography>Wish lists</Typography>
+        <h4
+          style={{
+            color: "rgb(34, 34, 34)",
+            fontWeight: "lighter",
+            fontSize: "2.25rem"
+          }}
+        >
+          Wishlists
+        </h4>
 
         {ErrorMessage}
         <div>
