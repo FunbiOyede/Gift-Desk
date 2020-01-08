@@ -64,7 +64,7 @@ class UpdateWislists extends Component {
     };
     axios
       .put(
-        "http://localhost:5000/vivid/wishlists/update/" +
+        "http://localhost:7000/vivid/wishlists/update/" +
           this.props.match.params.id,
         wish
       )
@@ -80,7 +80,7 @@ class UpdateWislists extends Component {
   componentDidMount() {
     axios
       .get(
-        "http://localhost:5000/vivid/wishlists/wish/" +
+        "http://localhost:7000/vivid/wishlists/wish/" +
           this.props.match.params.id
       )
       .then(res => {

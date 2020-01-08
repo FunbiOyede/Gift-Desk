@@ -64,7 +64,7 @@ export const create_wishlists = (...wishlists) => {
       User: 1
     };
     axios
-      .post("http://localhost:5000/vivid/wishlists/create", wishlist)
+      .post("http://localhost:7000/vivid/wishlists/create", wishlist)
       .then(response => {
         dispatch(post_wishlists_success(response));
       })
@@ -122,7 +122,7 @@ export const get_wishlists = () => {
   return dispatch => {
     dispatch(fetch_wislists());
     axios
-      .get("http://localhost:5000/vivid/wishlists")
+      .get("http://localhost:7000/vivid/wishlists")
       .then(response => {
         dispatch(fetch_wishlists_success(response.data));
       })
@@ -178,7 +178,7 @@ export const deleteWishlists = id => {
   return dispatch => {
     dispatch(delete_wislists());
     axios
-      .delete(`http://localhost:5000/vivid/wishlists/delete/${id}`)
+      .delete(`http://localhost:7000/vivid/wishlists/delete/${id}`)
       .then(response => {
         dispatch(delete_wishlists_success(id));
       })
@@ -243,7 +243,7 @@ export const create_user = (name, email, password) => {
       Password: password
     };
     axios
-      .post("http://localhost:5000/vivid/user/create", user_details)
+      .post("http://localhost:7000/vivid/user/create", user_details)
       .then(res => {
         dispatch(post_user_success(res));
       })
