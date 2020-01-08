@@ -50,32 +50,11 @@ class WishListService {
    * @param {*} req
    * @param {*} res
    * @param {*} next
-   * @description get total number of wishlists
-   */
-  static getNumberOfWislists(req, res, next) {
-    Wishlists.findAndCountAll().then(result => {
-      res.status(200).json({
-        count: result.count
-      });
-    });
-  }
-
-  /**
-   *
-   * @param {*} req
-   * @param {*} res
-   * @param {*} next
    * @description deletes a wishlist by id
    */
-  static deleteWishlists(id) {
-    //continue here
-     const wishlist = await Wishlists.findByPk(id);
-    Wishlists.findByPk(req.params.id)
-      .then(wishlists => wishlists.destroy())
-      .then(result => res.status(200).json("wishlists successfully deleted"))
-      .catch(error => {
-        res.status(400).json(error);
-      });
+  static async deleteWishlists(id) {
+    const wishlist = await Wishlists.destroy({ where: { id: id } });
+    return wishlist;
   }
 
   /**
@@ -85,27 +64,27 @@ class WishListService {
    * @param {*} next
    * @description updates a wislists by id
    */
-  static updateWishlists(req, res, next) {
-    const id = req.params.id;
-    const Name = rwisheq.body.Name;
-    const Title = req.body.Title;
-    const Description = req.body.Description;
-    const Url = req.body.Url;
-    const ItemName = req.body.ItemName;
-    const Price = req.body.Price;
-    Wishlists.update(
+  static async updateWishlists(
+    id,
+    name,
+    title,
+    description,
+    url,
+    ItemName,
+    price
+  ) {
+    const response = await Wishlists.update(
       {
-        forWhom: Name,
-        Title: Title,
-        Description: Description,
-        Url: Url,
+        forWhom: name,
+        Title: title,
+        Description: description,
+        Url: url,
         ItemName: ItemName,
-        Price: Price
+        Price: price
       },
       { where: { id: id } }
-    )
-      .then(result => res.status(200).json(result))
-      .catch(error => res.status(400).json(error));
+    );
+    return { response: response };
   }
 
   /**
@@ -115,7 +94,7 @@ class WishListService {
    * @param {*} next
    * @description gets a wishlists by id
    */
-  static async findAWish(id) {
+  static async getAWish(id) {
     const wish = await Wishlists.findByPk(id);
     return { wishlist: wish };
   }

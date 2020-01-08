@@ -18,7 +18,7 @@ Router.post("/wishlists/create", async (req, res, next) => {
       Price,
       User
     );
-    res.status("🔥 wishlist created").json(response);
+    res.status(200).json({ message: "wishlist created", response });
   } catch (error) {
     res.status(400).json("🔥 error: %o", error);
   }
@@ -34,22 +34,45 @@ Router.get("/wishlists", async (req, res, next) => {
   }
 });
 
-// Wishlists ==> COUNT ALL WISHLISTS
-Router.get("/wishlists/count", WishListService.getNumberOfWislists);
-
 //Wishlists ==> DELETE BY ID
 
-Router.delete("/wishlists/delete/:id", WishListService.deleteWishlists);
+Router.delete("/wishlists/delete/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const response = await WishListService.deleteWishlists(id);
+    res.status(200).json({ response: "wishlist deleted", response });
+  } catch (error) {
+    res.status(400).json("🔥 error: %o", error);
+  }
+});
 
 //Wishlists ==> UPDATE BY ID
-Router.put("/wishlists/update/:id", WishListService.updateWishlists);
+Router.put("/wishlists/update/:id", async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const { Name, Title, Description, Url, ItemName, Price } = req.body;
+
+    const response = await WishListService.updateWishlists(
+      id,
+      Name,
+      Title,
+      Description,
+      Url,
+      ItemName,
+      Price
+    );
+    res.status(200).json({ message: "wishlist updated", response });
+  } catch (error) {
+    res.status(400).json("🔥 error: %o", error);
+  }
+});
 
 //Wishlists ==> GET BY ID
 Router.get("/wishlists/wish/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    const { wishlist } = await WishListService.findAWish(id);
+    const { wishlist } = await WishListService.getAWish(id);
     res.status(200).json(wishlist);
   } catch (error) {
     res.status(400).json("🔥 error: %o", error);
