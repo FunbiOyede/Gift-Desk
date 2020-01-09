@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { connect } from "react-redux";
 import Typography from "@material-ui/core/Typography";
 import styles from "./Dashboard.module.css";
 import Navigation from "../Navigation/Navigation";
@@ -24,13 +23,23 @@ const Dashboard = props => (
           </Typography>
         </Link>
 
+        <Link className={styles.DashboardList} style={paper} to="/ideas">
+          <Typography variant="h6" component="h2">
+            <span role="img" aria-label="image">
+              👪
+            </span>
+            Create Ideas
+            <p>A private place for you, your friends and family . </p>
+          </Typography>
+        </Link>
+
         <Link className={styles.DashboardList} style={paper} to="/idea">
           <Typography variant="h6" component="h2">
             <span role="img" aria-label="image">
               💡
             </span>
             Ideas
-            <p>A private place just for you,for yourself and your friends. </p>
+            <p>View Ideas </p>
           </Typography>
         </Link>
 

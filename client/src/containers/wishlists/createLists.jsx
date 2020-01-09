@@ -7,7 +7,6 @@ import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import Aide from "../../components/HOC/Aide";
 import styles from "./createLists.module.css";
-import axios from "axios";
 class createLists extends Component {
   state = {
     name: "",

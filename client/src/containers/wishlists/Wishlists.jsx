@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
 import Navigation from "../../components/Navigation/Navigation";
 import * as ActionCreators from "../../store/Actions/ActionCreators";
-
 import Button from "@material-ui/core/Button";
-
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
@@ -39,7 +37,6 @@ export class Wishlists extends Component {
         >
           Wishlists
         </h4>
-
         {ErrorMessage}
         <div>
           <button

@@ -53,7 +53,15 @@ class Ideas extends Component {
       <div>
         <Navigation />
         <div>
-          <h3>for you </h3>
+          <h4
+            style={{
+              color: "rgb(34, 34, 34)",
+              fontWeight: "lighter",
+              fontSize: "2.25rem"
+            }}
+          >
+            Create Ideas
+          </h4>
           <form style={form}>
             <TextField
               placeholder="E.g. Nike Fear Of God"
