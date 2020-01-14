@@ -44,8 +44,8 @@ class Idea extends Component {
           </button>
 
           {/* based of if the ideas column is empty */}
-          <p>You dont have any ideas yet</p>
-          <h3>Create one</h3>
+          {/* <p>You dont have any ideas yet</p>
+          <h3>Create one</h3> */}
         </div>
       </div>
     );

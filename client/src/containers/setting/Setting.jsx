@@ -7,7 +7,7 @@ class Setting extends Component {
     return (
       <div>
         Your Settings
-        <p>Update your details and profile photo</p>
+        <p>Update your Email and Password</p>
         <div>Coming Soon!!!</div>
       </div>
     );
