@@ -52,6 +52,8 @@ export const post_wishlists_failed = response => {
  * async function makes a post request for creating a new wishlists
  */
 export const create_wishlists = (...wishlists) => {
+  // stores user in localstorage and you understand
+  const userId = localStorage.getItem("user");
   return dispatch => {
     dispatch(post_wishlists());
     const wishlist = {
@@ -61,7 +63,7 @@ export const create_wishlists = (...wishlists) => {
       Url: wishlists[3],
       ItemName: wishlists[4],
       Price: wishlists[5],
-      User: 1
+      User: userId
     };
     axios
       .post("http://localhost:7000/vivid/wishlists/create", wishlist)
@@ -246,6 +248,8 @@ export const create_user = (name, email, password) => {
       .post("http://localhost:7000/vivid/user/create", user_details)
       .then(res => {
         dispatch(post_user_success(res));
+        console.log(res.data.id);
+        localStorage.setItem("user", res.data.id);
       })
       .catch(err => {
         console.log(err);

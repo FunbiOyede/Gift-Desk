@@ -1,13 +1,15 @@
 import * as ActionTypes from "../Actions/ActionTypes";
 
 const initialState = {
-  isRegsitered: false
+  isRegsitered: false,
+  userId: ""
 };
 const User = (state = initialState, action) => {
   if (action.type === ActionTypes.POST_SUCCESS) {
     return {
       ...state,
-      isRegsitered: true
+      isRegsitered: true,
+      userId: action.response.data.id
     };
   }
   return state;

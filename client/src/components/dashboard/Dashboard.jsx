@@ -49,7 +49,7 @@ const Dashboard = props => (
               ⚙️
             </span>
             Settings
-            <p>Update your details </p>
+            <p>Update your profile </p>
           </Typography>
         </Link>
       </div>
