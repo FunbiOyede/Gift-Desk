@@ -63,7 +63,9 @@ class createLists extends Component {
       this.state.price
     );
 
-    this.props.history.push("/wishlists");
+    setTimeout(() => {
+      this.props.history.push("/wishlists");
+    }, 500);
     this.setState({
       name: "",
       title: "",
