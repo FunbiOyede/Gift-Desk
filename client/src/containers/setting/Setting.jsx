@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Navigation from "../../components/Navigation/Navigation";
 import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import SaveIcon from "@material-ui/icons/Save";
 class Setting extends Component {
   render() {
     return (
@@ -30,6 +32,14 @@ class Setting extends Component {
               variant="outlined"
               placeholder="change password"
             />
+            <Button
+              variant="contained"
+              style={{ background: "rgb(47, 108, 172)", color: "white" }}
+              size="large"
+              Icon={<SaveIcon />}
+            >
+              Update Settings
+            </Button>
           </form>
         </div>
       </div>

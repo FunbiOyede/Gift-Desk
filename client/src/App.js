@@ -35,9 +35,9 @@ function App(props) {
             <Route path="/create" exact component={CreateLists} />
             <Route path="/" exact component={Home} />
             <Route path="/register" exact component={Register} />
-            <Route component={Error} />
             <Route path="/login" exact component={Login} />
             <Route path="/signout" exact component={Signout} />
+            <Route component={Error} />
           </Switch>
         </React.Suspense>
       </BrowserRouter>

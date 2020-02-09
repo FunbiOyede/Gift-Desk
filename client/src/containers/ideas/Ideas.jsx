@@ -103,7 +103,7 @@ class Ideas extends Component {
               Icon={<SaveIcon />}
               onClick={this.HandleUserIdeas}
             >
-              Create Wishlists
+              Create Ideas
             </Button>
           </form>
 
