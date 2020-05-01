@@ -10,7 +10,7 @@ const HomeNavigation = () => (
         variant="h6"
         style={{ fontWeight: 700, color: "rgb(56, 64, 72)" }}
       >
-        Vivid Gift
+      Gift Desk
       </Typography>
     </Link>
     <div
